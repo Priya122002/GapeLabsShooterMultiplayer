@@ -10,12 +10,15 @@ public class PlayerHealth : MonoBehaviourPun
     {
         health = maxHealth;
     }
+
     [PunRPC]
     public void TakeDamage(int dmg)
     {
+        if (!photonView.IsMine) return;
+
         health -= dmg;
 
-        if (health <= 0 && photonView.IsMine)
+        if (health <= 0)
         {
             Invoke(nameof(Respawn), 2f);
         }

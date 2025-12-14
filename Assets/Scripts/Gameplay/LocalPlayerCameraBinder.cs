@@ -1,4 +1,4 @@
-using Photon.Pun;
+﻿using Photon.Pun;
 using UnityEngine;
 
 public class LocalPlayerCameraBinder : MonoBehaviourPun
@@ -7,8 +7,13 @@ public class LocalPlayerCameraBinder : MonoBehaviourPun
     {
         if (!photonView.IsMine) return;
 
+        // Camera follow
         Camera.main
             .GetComponent<CameraFollow>()
             .SetTarget(transform);
+
+        UIManager.Instance.RegisterLocalPlayer(
+            GetComponent<PlayerAttack>()
+        );
     }
 }

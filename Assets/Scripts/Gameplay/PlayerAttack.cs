@@ -1,29 +1,45 @@
-using UnityEngine;
-using UnityEngine.InputSystem;
+﻿using UnityEngine;
 using Photon.Pun;
 
 public class PlayerAttack : MonoBehaviourPun
 {
+    public Transform gunPoint;
     public float attackCooldown = 0.5f;
-    float lastAttackTime;
 
-    public void OnAttack(InputAction.CallbackContext context)
+    float lastFireTime;
+
+    public void Fire()
     {
         if (!photonView.IsMine) return;
-        if (!context.performed) return;
 
-        if (Time.time - lastAttackTime < attackCooldown)
+        if (Time.time - lastFireTime < attackCooldown)
             return;
 
-        lastAttackTime = Time.time;
+        lastFireTime = Time.time;
 
-        photonView.RPC(nameof(AttackRPC), RpcTarget.All);
+        photonView.RPC(
+            nameof(RPC_Fire),
+            RpcTarget.All,
+            gunPoint.position,
+            gunPoint.rotation
+        );
+        Debug.DrawRay(gunPoint.position, gunPoint.forward * 3f, Color.green, 2f);
+
     }
 
     [PunRPC]
-    void AttackRPC()
+    void RPC_Fire(Vector3 pos, Quaternion rot)
     {
-        Debug.Log("Attack triggered");
-        // Next step: projectile or melee
+        if (!ObjectPooler.Instance.IsReady) return;
+
+        GameObject obj = ObjectPooler.Instance.Spawn(
+            "Projectile",
+            pos,
+            rot
+        );
+
+        // 🔥 rotate visual only, keep forward Z movement
+        obj.GetComponent<Projectile>().RotateVisual90();
     }
+
 }

@@ -1,15 +1,16 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
     Transform target;
-    Vector3 offset;
-    public float followSpeed = 10f;
 
-    void Awake()
-    {
-        offset = transform.position;
-    }
+    [Header("Camera Offset")]
+    public Vector3 offset = new Vector3(3f, 5f, -3.5f);
+
+
+    [Header("Follow Settings")]
+    public float followSpeed = 8f;
+    public float rotationSpeed = 10f;
 
     public void SetTarget(Transform t)
     {
@@ -20,16 +21,23 @@ public class CameraFollow : MonoBehaviour
     {
         if (!target) return;
 
-        Vector3 desired = new Vector3(
-            target.position.x + offset.x,
-            offset.y,
-            target.position.z + offset.z
-        );
-
+        // Position
+        Vector3 desiredPosition = target.position + offset;
         transform.position = Vector3.Lerp(
             transform.position,
-            desired,
+            desiredPosition,
             followSpeed * Time.deltaTime
+        );
+
+        // Rotation (look at player)
+        Quaternion lookRotation = Quaternion.LookRotation(
+            target.position - transform.position
+        );
+
+        transform.rotation = Quaternion.Slerp(
+            transform.rotation,
+            lookRotation,
+            rotationSpeed * Time.deltaTime
         );
     }
 }
