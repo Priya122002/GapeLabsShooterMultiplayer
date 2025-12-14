@@ -11,9 +11,7 @@ public class PlayerAttack : MonoBehaviourPun
     public void Fire()
     {
         if (!photonView.IsMine) return;
-
-        if (Time.time - lastFireTime < attackCooldown)
-            return;
+        if (Time.time - lastFireTime < attackCooldown) return;
 
         lastFireTime = Time.time;
 
@@ -23,8 +21,8 @@ public class PlayerAttack : MonoBehaviourPun
             gunPoint.position,
             gunPoint.rotation
         );
-        Debug.DrawRay(gunPoint.position, gunPoint.forward * 3f, Color.green, 2f);
 
+        Debug.DrawRay(gunPoint.position, gunPoint.forward * 3f, Color.green, 2f);
     }
 
     [PunRPC]
@@ -32,14 +30,12 @@ public class PlayerAttack : MonoBehaviourPun
     {
         if (!ObjectPooler.Instance.IsReady) return;
 
-        GameObject obj = ObjectPooler.Instance.Spawn(
+        GameObject bullet = ObjectPooler.Instance.Spawn(
             "Projectile",
             pos,
             rot
         );
 
-        // 🔥 rotate visual only, keep forward Z movement
-        obj.GetComponent<Projectile>().RotateVisual90();
+        bullet.GetComponent<Projectile>().RotateVisual90();
     }
-
 }

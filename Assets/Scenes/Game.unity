@@ -1574,7 +1574,7 @@ MonoBehaviour:
   pools:
   - tag: Projectile
     addressKey: Projectile
-    size: 8
+    size: 20
     parent: {fileID: 408847697}
 --- !u!1 &1733531957
 GameObject:

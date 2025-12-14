@@ -41,7 +41,6 @@ public class ObjectPooler : MonoBehaviour
         yield return InitializePools();
     }
 
-    // -------------------- INITIALIZATION --------------------
 
     IEnumerator InitializePools()
     {

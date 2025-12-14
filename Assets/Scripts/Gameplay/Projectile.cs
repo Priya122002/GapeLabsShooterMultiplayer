@@ -5,26 +5,22 @@ public class Projectile : MonoBehaviour
 {
     public float speed = 12f;
     public float lifeTime = 2f;
-    public int damage = 20;
+    public int damage = 10;
 
-    float timer;
-    Transform visualChild;
+    private float timer;
+    private Transform visualChild;
 
     void Awake()
     {
-        // cache the visual child
-        visualChild = transform.GetChild(0);
+        visualChild = transform.GetChild(0); // visual mesh
     }
 
     void OnEnable()
     {
         timer = lifeTime;
-
-        // reset visual rotation first
         visualChild.localRotation = Quaternion.identity;
     }
 
-    // 🔥 CALL THIS WHEN FIRING
     public void RotateVisual90()
     {
         visualChild.localRotation = Quaternion.Euler(90f, 0f, 0f);
@@ -37,10 +33,9 @@ public class Projectile : MonoBehaviour
         timer -= Time.deltaTime;
         if (timer <= 0f)
         {
-            ObjectPooler.Instance.ReturnToPool("Projectile", gameObject);
+            ReturnToPool();
         }
     }
-
     void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("Player")) return;
@@ -48,6 +43,7 @@ public class Projectile : MonoBehaviour
         PlayerHealth health = other.GetComponent<PlayerHealth>();
         if (health != null)
         {
+            // ✅ Send to all
             health.photonView.RPC(
                 nameof(PlayerHealth.TakeDamage),
                 RpcTarget.All,
@@ -55,6 +51,13 @@ public class Projectile : MonoBehaviour
             );
         }
 
+        ReturnToPool();
+    }
+
+
+
+    void ReturnToPool()
+    {
         ObjectPooler.Instance.ReturnToPool("Projectile", gameObject);
     }
 }
