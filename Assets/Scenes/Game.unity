@@ -827,7 +827,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c92a7ff45e890e74b8e84f65a6b94302, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AssetBundleLoader
-  bundleUrl: https://raw.githubusercontent.com/Priya122002/GapeLabsShooterMultiplayer/refs/heads/master/Assets/Prefabs/BundleCube.prefab
+  bundleUrl: https://github.com/Priya122002/GapeLabsShooterMultiplayer/raw/refs/heads/master/Assets/AssetBundles/demo_bundle
   prefabName: BundleCube
 --- !u!1 &623917358
 GameObject:
