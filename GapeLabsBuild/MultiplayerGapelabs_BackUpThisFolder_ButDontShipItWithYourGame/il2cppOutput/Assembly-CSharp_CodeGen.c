@@ -53,6 +53,9 @@ extern void U3CStartU3Ed__9_System_Collections_IEnumerator_get_Current_m4B8C6446
 extern void PlayerAttack_Fire_m01686605D0664D03A58C5053E5CFF2A43A39AC31 (void);
 extern void PlayerAttack_RPC_Fire_mEC23C77BBBFF396B8A60E102D23D645AA6D9C21D (void);
 extern void PlayerAttack__ctor_m3F71E53EB6FA66759E071280E73B9E9DD38DF61C (void);
+extern void PlayerBillboard_Start_m7F5A96C9D33680ADB698CD0D2BEBDF0F00DCFBEE (void);
+extern void PlayerBillboard_LateUpdate_mC4AD4ACCAB61AA065C617BBC7EB258C763C2B382 (void);
+extern void PlayerBillboard__ctor_m9979BC5C19554AFD9464C1BB8E56AF5BFBC91D87 (void);
 extern void PlayerHealth_Start_mB40232C538ABF2AAA435E94E0A697D0A0D25C6F5 (void);
 extern void PlayerHealth_TakeDamage_mB6C8B2F391600A980FC91EE61150A4C862E94071 (void);
 extern void PlayerHealth_SyncHealth_m478A8906516212EE4A640580D6BAB0A76F97ACDF (void);
@@ -69,6 +72,8 @@ extern void U3CSmoothHealthUpdateU3Ed__11_System_Collections_IEnumerator_get_Cur
 extern void PlayerMovement_Start_m83FD44DCA324CE3D05A71FD2E2991FCD743F003A (void);
 extern void PlayerMovement_Update_m5BB6CE35AF68EE00CFEB4BA5EBA17E10667551D3 (void);
 extern void PlayerMovement__ctor_mB37559C5B0638161878D20E00B7C672FC38BBBAA (void);
+extern void PlayerNameTag_Start_mB17958AD1137932E9E4DD4F6C052D9A93B19C397 (void);
+extern void PlayerNameTag__ctor_m77B6518F20C0E7E9B1C269916325EC0E3787823D (void);
 extern void Projectile_Awake_m12ADD9C3E81141584C8879C9ECB35F6C89E9FEB2 (void);
 extern void Projectile_OnEnable_mAA7A5463C8AAEB29F130F6DBED35E1397802AB53 (void);
 extern void Projectile_RotateVisual90_m451E6CEA7E40F04990AAB4EF54429958644DFBC9 (void);
@@ -492,7 +497,7 @@ extern void TextToggleIsOnTransition_OnValueChanged_m2130BC0EA8E9ACBE55A1DB8FBEF
 extern void TextToggleIsOnTransition_OnPointerEnter_m857EAEB61AD055B19C27B7DE5BBFD0CAEBF2C41D (void);
 extern void TextToggleIsOnTransition_OnPointerExit_m19C44B773913ECEB572F90DFC2ACB123E4D9E50F (void);
 extern void TextToggleIsOnTransition__ctor_mC67BFBF0D3B3D64CDCA7F3A72AD6A8789AF07BDC (void);
-static Il2CppMethodPointer s_methodPointers[485] = 
+static Il2CppMethodPointer s_methodPointers[490] = 
 {
 	AddressableManager_get_ArenaLoaded_mC53F1AFA07BBAFFE4DC2CECF624230B0E8C96877,
 	AddressableManager_set_ArenaLoaded_m8893019ABDBCA98CF6506E5B14D3D634D2FB8364,
@@ -540,6 +545,9 @@ static Il2CppMethodPointer s_methodPointers[485] =
 	PlayerAttack_Fire_m01686605D0664D03A58C5053E5CFF2A43A39AC31,
 	PlayerAttack_RPC_Fire_mEC23C77BBBFF396B8A60E102D23D645AA6D9C21D,
 	PlayerAttack__ctor_m3F71E53EB6FA66759E071280E73B9E9DD38DF61C,
+	PlayerBillboard_Start_m7F5A96C9D33680ADB698CD0D2BEBDF0F00DCFBEE,
+	PlayerBillboard_LateUpdate_mC4AD4ACCAB61AA065C617BBC7EB258C763C2B382,
+	PlayerBillboard__ctor_m9979BC5C19554AFD9464C1BB8E56AF5BFBC91D87,
 	PlayerHealth_Start_mB40232C538ABF2AAA435E94E0A697D0A0D25C6F5,
 	PlayerHealth_TakeDamage_mB6C8B2F391600A980FC91EE61150A4C862E94071,
 	PlayerHealth_SyncHealth_m478A8906516212EE4A640580D6BAB0A76F97ACDF,
@@ -556,6 +564,8 @@ static Il2CppMethodPointer s_methodPointers[485] =
 	PlayerMovement_Start_m83FD44DCA324CE3D05A71FD2E2991FCD743F003A,
 	PlayerMovement_Update_m5BB6CE35AF68EE00CFEB4BA5EBA17E10667551D3,
 	PlayerMovement__ctor_mB37559C5B0638161878D20E00B7C672FC38BBBAA,
+	PlayerNameTag_Start_mB17958AD1137932E9E4DD4F6C052D9A93B19C397,
+	PlayerNameTag__ctor_m77B6518F20C0E7E9B1C269916325EC0E3787823D,
 	Projectile_Awake_m12ADD9C3E81141584C8879C9ECB35F6C89E9FEB2,
 	Projectile_OnEnable_mAA7A5463C8AAEB29F130F6DBED35E1397802AB53,
 	Projectile_RotateVisual90_m451E6CEA7E40F04990AAB4EF54429958644DFBC9,
@@ -980,7 +990,7 @@ static Il2CppMethodPointer s_methodPointers[485] =
 	TextToggleIsOnTransition_OnPointerExit_m19C44B773913ECEB572F90DFC2ACB123E4D9E50F,
 	TextToggleIsOnTransition__ctor_mC67BFBF0D3B3D64CDCA7F3A72AD6A8789AF07BDC,
 };
-static const int32_t s_InvokerIndices[485] = 
+static const int32_t s_InvokerIndices[490] = 
 {
 	26324,
 	24931,
@@ -1029,6 +1039,9 @@ static const int32_t s_InvokerIndices[485] =
 	5961,
 	15350,
 	15350,
+	15350,
+	15350,
+	15350,
 	11494,
 	11494,
 	15156,
@@ -1041,6 +1054,8 @@ static const int32_t s_InvokerIndices[485] =
 	15156,
 	15350,
 	15156,
+	15350,
+	15350,
 	15350,
 	15350,
 	15350,
@@ -1472,7 +1487,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	485,
+	490,
 	s_methodPointers,
 	0,
 	NULL,
