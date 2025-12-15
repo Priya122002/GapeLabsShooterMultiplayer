@@ -4,7 +4,7 @@ using Photon.Pun;
 public class PlayerAttack : MonoBehaviourPun
 {
     public Transform gunPoint;
-    public float attackCooldown = 0.5f;
+    public float attackCooldown = 0.001f;
 
     float lastFireTime;
 

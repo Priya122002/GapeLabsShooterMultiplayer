@@ -24,7 +24,27 @@ public class PlayerMovement : MonoBehaviourPun
 
         joystick = FindObjectOfType<VirtualJoystick>();
         cam = Camera.main.transform;
+
+        FaceCameraOnSpawn();
     }
+
+    void FaceCameraOnSpawn()
+    {
+        if (cam == null) return;
+
+        // 🔥 Direction from player → camera
+        Vector3 dirToCamera = cam.position - transform.position;
+
+        // Keep player upright
+        dirToCamera.y = 0f;
+
+        if (dirToCamera.sqrMagnitude > 0.001f)
+        {
+            transform.rotation = Quaternion.LookRotation(dirToCamera);
+        }
+    }
+
+
 
     void Update()
     {

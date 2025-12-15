@@ -4,37 +4,30 @@ using UnityEngine.Networking;
 
 public class AssetBundleLoader : MonoBehaviour
 {
-    [Header("GitHub RAW URL")]
     public string bundleUrl;
-
-    [Header("Prefab Name")]
     public string prefabName = "BundleCube";
+
+    public Transform[] spawnPoints;
 
     IEnumerator Start()
     {
-        Debug.Log("Downloading AssetBundle...");
-
         UnityWebRequest request = UnityWebRequest.Get(bundleUrl);
         yield return request.SendWebRequest();
 
         if (request.result != UnityWebRequest.Result.Success)
         {
-            Debug.LogError("Download failed: " + request.error);
+            Debug.LogError(request.error);
             yield break;
         }
 
-        byte[] bundleData = request.downloadHandler.data;
-
-        // 🔥 Load from BYTES
-        AssetBundle bundle = AssetBundle.LoadFromMemory(bundleData);
+        AssetBundle bundle =
+            AssetBundle.LoadFromMemory(request.downloadHandler.data);
 
         if (bundle == null)
         {
-            Debug.LogError("AssetBundle load failed");
+            Debug.LogError("Bundle load failed");
             yield break;
         }
-
-        Debug.Log("AssetBundle loaded successfully!");
 
         GameObject prefab = bundle.LoadAsset<GameObject>(prefabName);
 
@@ -44,8 +37,14 @@ public class AssetBundleLoader : MonoBehaviour
             yield break;
         }
 
-        Instantiate(prefab, Vector3.zero, Quaternion.identity);
+        foreach (Transform point in spawnPoints)
+        {
+            GameObject obj = Instantiate(prefab, point);
 
-        Debug.Log("Prefab instantiated from AssetBundle!");
+            obj.transform.localPosition = Vector3.zero;
+            obj.transform.localRotation = Quaternion.identity;
+
+        }
+
     }
 }
