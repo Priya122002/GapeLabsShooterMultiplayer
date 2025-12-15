@@ -1,0 +1,35 @@
+ManifestFileVersion: 0
+UnityVersion: 6000.2.12f1
+CRC: 3236504636
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 73a5f7e9476ec02fcae5e11e2c964904
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 3bb6cd21eda0e70c69c06b78380eafd8
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 292cc77306df091e10067af4aca48555
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 65
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Prefabs/BundleCube.prefab
+Dependencies: []
