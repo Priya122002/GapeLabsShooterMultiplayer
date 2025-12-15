@@ -1,16 +1,16 @@
 ManifestFileVersion: 0
 UnityVersion: 6000.2.12f1
-CRC: 2806553393
+CRC: 304954450
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: f9ded7443a95764262fadbc1baf3b3b4
+    Hash: af7e9d6decbd6ba8b16f9e2f79e45152
   TypeTreeHash:
     serializedVersion: 2
     Hash: 3bb6cd21eda0e70c69c06b78380eafd8
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: 24c6b5c6a0b154f530555609c5a67ccf
+    Hash: d228b56e7fb05a85ff8df19049779d8c
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -32,4 +32,5 @@ ClassTypes:
 SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/Prefabs/BundleCube.prefab
+- Assets/Materials/Yellow.mat
 Dependencies: []

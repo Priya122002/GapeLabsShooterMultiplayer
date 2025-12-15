@@ -11079,7 +11079,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool TextDataProvider_get_IgnoreF
 		return L_0;
 	}
 }
-// Method Definition Index: 80632
+// Method Definition Index: 80630
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR UnityWebRequest_t6233B8E22992FC2364A831C1ACB033EF3260C39F* UnityWebRequestAsyncOperation_get_webRequest_mF67D15420C7C1C4DCA1BD6F839048A0542998BC3_inline (UnityWebRequestAsyncOperation_t14BE94558FF3A2CFC2EFBE2511A3A88252042B8C* __this, const RuntimeMethod* method) 
 {
 	{
@@ -11171,7 +11171,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* Enumerator_get_Cur
 		return L_0;
 	}
 }
-// Method Definition Index: 81855
+// Method Definition Index: 81856
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void ProfilerCounterValue_1_set_Value_m6A4B0DA78E5765DEF62CEEB2699D1EA647778872_gshared_inline (ProfilerCounterValue_1_tBDDA3FED817E45C8F5AEAFCA9A6AC487DEBF29B7* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -11210,7 +11210,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Dictionary_2_t5B0B823A74BF369A8BA
 		return L_0;
 	}
 }
-// Method Definition Index: 81854
+// Method Definition Index: 81855
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t ProfilerCounterValue_1_get_Value_m3717B51EF562CFD80980F908932DA507BFC06117_gshared_inline (ProfilerCounterValue_1_tBDDA3FED817E45C8F5AEAFCA9A6AC487DEBF29B7* __this, const RuntimeMethod* method) 
 {
 	int32_t V_0 = 0;
@@ -11348,7 +11348,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR AssetFrameData_t0687CA219D5D690AA
 		return L_0;
 	}
 }
-// Method Definition Index: 81852
+// Method Definition Index: 81853
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void ProfilerCounterValue_1__ctor_m3A80292DC9092B33FEF79F79A5013E829CE54AEB_gshared_inline (ProfilerCounterValue_1_tBDDA3FED817E45C8F5AEAFCA9A6AC487DEBF29B7* __this, ProfilerCategory_tA55212CD512C618AF6D2147791F20319896592AC ___0_category, String_t* ___1_name, uint8_t ___2_dataUnit, const RuntimeMethod* method) 
 {
 	uint8_t V_0 = 0x0;
@@ -11395,7 +11395,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* AsyncOperationBase
 		return L_0;
 	}
 }
-// Method Definition Index: 78934
+// Method Definition Index: 78933
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t HashSet_1_get_Count_m41CC85EEB7855CEFA3BC7A32F115387939318ED3_gshared_inline (HashSet_1_t2F33BEB06EEA4A872E2FAF464382422AA39AE885* __this, const RuntimeMethod* method) 
 {
 	{

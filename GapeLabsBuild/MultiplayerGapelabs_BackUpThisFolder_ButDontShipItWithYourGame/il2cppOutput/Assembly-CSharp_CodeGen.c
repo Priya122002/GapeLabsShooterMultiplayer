@@ -16,13 +16,12 @@ extern void AddressableManager_OnArenaLoaded_m8C2AE7F66AC806E6AE2CEE0AA418165B76
 extern void AddressableManager__ctor_m764CE3DF99ED0ED7DE16D94BB4C64A80930DB7A1 (void);
 extern void AssetBundleLoader_Start_mEB4713E2E2E5F657E1E28DC4B9D41BA85AA77B2D (void);
 extern void AssetBundleLoader__ctor_mDA2019CD97FF0B336C39890F6715C59FAFC3FD60 (void);
-extern void AssetBundleLoader_U3CStartU3Eb__1_0_m53CABCAB2B52C449948E2C6FAC7A9C51DFCDA206 (void);
-extern void U3CStartU3Ed__1__ctor_mD764093E7E05324CEE0735ECAA6EF8CEA186E00D (void);
-extern void U3CStartU3Ed__1_System_IDisposable_Dispose_m0E178114A3A508119E806562CE57B0303F5293BA (void);
-extern void U3CStartU3Ed__1_MoveNext_mEFED3DD16E3B82E8629086037577D77EBC8051B4 (void);
-extern void U3CStartU3Ed__1_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m7F9EDD8070F4A4C766ECECC87BA1720E2A528053 (void);
-extern void U3CStartU3Ed__1_System_Collections_IEnumerator_Reset_m004809FE06AB70CCB0C41BEBA294514D2429AD4F (void);
-extern void U3CStartU3Ed__1_System_Collections_IEnumerator_get_Current_m336E767173B3DF3AD6839F04307EF317832FDD37 (void);
+extern void U3CStartU3Ed__2__ctor_m179022667D14791DC8342206E39A04E9586841B6 (void);
+extern void U3CStartU3Ed__2_System_IDisposable_Dispose_m83F7660D3B8DEC7F9AB9D7B6C23E0701B01F13F3 (void);
+extern void U3CStartU3Ed__2_MoveNext_m5E3B0084802D31465371F348DFA3B29D92E4E891 (void);
+extern void U3CStartU3Ed__2_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m33CDE716302CB6BD4B7048A1E8B6A3B7534B390D (void);
+extern void U3CStartU3Ed__2_System_Collections_IEnumerator_Reset_mEA95600A09CA99DABB9A65C7976981C5E288581C (void);
+extern void U3CStartU3Ed__2_System_Collections_IEnumerator_get_Current_m45F7C70655EF569973B184C82D2C5C73562A3237 (void);
 extern void CameraFollow_SetTarget_m406DE218B1C65D98636DF47BEBDB1CE981B366CC (void);
 extern void CameraFollow_LateUpdate_m9C559F2A33098CED5CB8BD82CCD6FC98AB521D61 (void);
 extern void CameraFollow__ctor_m113CC547D419EF599BC487F0F44B06BB2D4EE11B (void);
@@ -497,7 +496,7 @@ extern void TextToggleIsOnTransition_OnValueChanged_m2130BC0EA8E9ACBE55A1DB8FBEF
 extern void TextToggleIsOnTransition_OnPointerEnter_m857EAEB61AD055B19C27B7DE5BBFD0CAEBF2C41D (void);
 extern void TextToggleIsOnTransition_OnPointerExit_m19C44B773913ECEB572F90DFC2ACB123E4D9E50F (void);
 extern void TextToggleIsOnTransition__ctor_mC67BFBF0D3B3D64CDCA7F3A72AD6A8789AF07BDC (void);
-static Il2CppMethodPointer s_methodPointers[490] = 
+static Il2CppMethodPointer s_methodPointers[489] = 
 {
 	AddressableManager_get_ArenaLoaded_mC53F1AFA07BBAFFE4DC2CECF624230B0E8C96877,
 	AddressableManager_set_ArenaLoaded_m8893019ABDBCA98CF6506E5B14D3D634D2FB8364,
@@ -508,13 +507,12 @@ static Il2CppMethodPointer s_methodPointers[490] =
 	AddressableManager__ctor_m764CE3DF99ED0ED7DE16D94BB4C64A80930DB7A1,
 	AssetBundleLoader_Start_mEB4713E2E2E5F657E1E28DC4B9D41BA85AA77B2D,
 	AssetBundleLoader__ctor_mDA2019CD97FF0B336C39890F6715C59FAFC3FD60,
-	AssetBundleLoader_U3CStartU3Eb__1_0_m53CABCAB2B52C449948E2C6FAC7A9C51DFCDA206,
-	U3CStartU3Ed__1__ctor_mD764093E7E05324CEE0735ECAA6EF8CEA186E00D,
-	U3CStartU3Ed__1_System_IDisposable_Dispose_m0E178114A3A508119E806562CE57B0303F5293BA,
-	U3CStartU3Ed__1_MoveNext_mEFED3DD16E3B82E8629086037577D77EBC8051B4,
-	U3CStartU3Ed__1_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m7F9EDD8070F4A4C766ECECC87BA1720E2A528053,
-	U3CStartU3Ed__1_System_Collections_IEnumerator_Reset_m004809FE06AB70CCB0C41BEBA294514D2429AD4F,
-	U3CStartU3Ed__1_System_Collections_IEnumerator_get_Current_m336E767173B3DF3AD6839F04307EF317832FDD37,
+	U3CStartU3Ed__2__ctor_m179022667D14791DC8342206E39A04E9586841B6,
+	U3CStartU3Ed__2_System_IDisposable_Dispose_m83F7660D3B8DEC7F9AB9D7B6C23E0701B01F13F3,
+	U3CStartU3Ed__2_MoveNext_m5E3B0084802D31465371F348DFA3B29D92E4E891,
+	U3CStartU3Ed__2_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m33CDE716302CB6BD4B7048A1E8B6A3B7534B390D,
+	U3CStartU3Ed__2_System_Collections_IEnumerator_Reset_mEA95600A09CA99DABB9A65C7976981C5E288581C,
+	U3CStartU3Ed__2_System_Collections_IEnumerator_get_Current_m45F7C70655EF569973B184C82D2C5C73562A3237,
 	CameraFollow_SetTarget_m406DE218B1C65D98636DF47BEBDB1CE981B366CC,
 	CameraFollow_LateUpdate_m9C559F2A33098CED5CB8BD82CCD6FC98AB521D61,
 	CameraFollow__ctor_m113CC547D419EF599BC487F0F44B06BB2D4EE11B,
@@ -990,17 +988,16 @@ static Il2CppMethodPointer s_methodPointers[490] =
 	TextToggleIsOnTransition_OnPointerExit_m19C44B773913ECEB572F90DFC2ACB123E4D9E50F,
 	TextToggleIsOnTransition__ctor_mC67BFBF0D3B3D64CDCA7F3A72AD6A8789AF07BDC,
 };
-static const int32_t s_InvokerIndices[490] = 
+static const int32_t s_InvokerIndices[489] = 
 {
-	26324,
-	24931,
+	26325,
+	24932,
 	15350,
 	15350,
 	15350,
 	10242,
 	15350,
 	15156,
-	15350,
 	15350,
 	11494,
 	15350,
@@ -1137,7 +1134,7 @@ static const int32_t s_InvokerIndices[490] =
 	15156,
 	15350,
 	15350,
-	26488,
+	26489,
 	15350,
 	2359,
 	15350,
@@ -1257,7 +1254,7 @@ static const int32_t s_InvokerIndices[490] =
 	15156,
 	15156,
 	15350,
-	26463,
+	26464,
 	11494,
 	15350,
 	14967,
@@ -1449,10 +1446,10 @@ static const int32_t s_InvokerIndices[490] =
 	15350,
 	15350,
 	15350,
-	26463,
-	26378,
-	26378,
-	26378,
+	26464,
+	26379,
+	26379,
+	26379,
 	15350,
 	11551,
 	15156,
@@ -1487,7 +1484,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	490,
+	489,
 	s_methodPointers,
 	0,
 	NULL,

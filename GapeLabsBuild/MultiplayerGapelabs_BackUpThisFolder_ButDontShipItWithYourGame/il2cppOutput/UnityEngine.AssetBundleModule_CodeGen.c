@@ -13,6 +13,8 @@ extern void AssetBundle_GetAllLoadedAssetBundles_m2975A463EF64FC0B497BC189F8DC4A
 extern void AssetBundle_LoadFromFileAsync_Internal_mB3D099E653D4AF91E5EA8CDCC49E8AB1BBAB764B (void);
 extern void AssetBundle_LoadFromFileAsync_m4C768290B7B6EE3CF7483BD4F0D338D496735F94 (void);
 extern void AssetBundle_LoadFromFileAsync_m37B766D9A85083324BC10538BCB29F8C9C263FAD (void);
+extern void AssetBundle_LoadFromMemory_Internal_m05D4AAA1B9AF41422A57A602AED64172D29C4305 (void);
+extern void AssetBundle_LoadFromMemory_mBA6847E4133DBBE3CCBCFFF31A40FA943DB95BBA (void);
 extern void AssetBundle_LoadAsset_m021FE0B52DD660E54AE4C225D9AE66147902B8FE (void);
 extern void AssetBundle_LoadAsset_Internal_mD096392756815901FE982C1AF64DDF0846551433 (void);
 extern void AssetBundle_LoadAssetAsync_mDAE70E6DD6F9D5360A5D0C7A74F3989174C2FEDB (void);
@@ -24,6 +26,7 @@ extern void AssetBundle_Unload_m0A189871E61A0D6735A2B41B3360A1F0677B636B (void);
 extern void AssetBundle_UnloadAsync_mEF0E3987C53B4FA85A8FC54B15FB380D02FDF908 (void);
 extern void AssetBundle_LoadAssetWithSubAssetsAsync_Internal_m9C189D40BB6E14EFB7432173EC273BE9C5E900D4 (void);
 extern void AssetBundle_LoadFromFileAsync_Internal_Injected_mE68698232C311F9C7271A38678A1D0D4A5BD3438 (void);
+extern void AssetBundle_LoadFromMemory_Internal_Injected_m3676080972FBB333ECA02671A2E9A37048F962E0 (void);
 extern void AssetBundle_LoadAsset_Internal_Injected_m56FFF045DB5ADFCD3A678282E82E8D8099678C66 (void);
 extern void AssetBundle_LoadAssetAsync_Internal_Injected_m13D33DAEAC19FD9883ACB05A9FEB8A0BE1F0C0DF (void);
 extern void AssetBundle_Unload_Injected_m214D08772AB2E1E1136D1E6E96B843254BB756F0 (void);
@@ -47,7 +50,7 @@ extern void AssetBundleUnloadOperation__ctor_m12038D85A933E5831BD6DE39CB544CF45F
 extern void AssetBundleUnloadOperation_WaitForCompletion_Injected_mA2B77E21269A223A7D73E67094C2080CE8D5FFF4 (void);
 extern void BindingsMarshaller_ConvertToManaged_m1C22F493733CD3BDAA96A0EAB6BB1B59804C6EE7 (void);
 extern void BindingsMarshaller_ConvertToNative_mBAF6B68CAD1BC00176278599B648A039D4A79B20 (void);
-static Il2CppMethodPointer s_methodPointers[42] = 
+static Il2CppMethodPointer s_methodPointers[45] = 
 {
 	AssetBundle__ctor_m12989CA081324BB49ED893BDA5E3B4E758D61410,
 	AssetBundle_GetAllLoadedAssetBundles_Native_m67164021223D792B05A0D016EED0418D35EC8B7F,
@@ -55,6 +58,8 @@ static Il2CppMethodPointer s_methodPointers[42] =
 	AssetBundle_LoadFromFileAsync_Internal_mB3D099E653D4AF91E5EA8CDCC49E8AB1BBAB764B,
 	AssetBundle_LoadFromFileAsync_m4C768290B7B6EE3CF7483BD4F0D338D496735F94,
 	AssetBundle_LoadFromFileAsync_m37B766D9A85083324BC10538BCB29F8C9C263FAD,
+	AssetBundle_LoadFromMemory_Internal_m05D4AAA1B9AF41422A57A602AED64172D29C4305,
+	AssetBundle_LoadFromMemory_mBA6847E4133DBBE3CCBCFFF31A40FA943DB95BBA,
 	NULL,
 	AssetBundle_LoadAsset_m021FE0B52DD660E54AE4C225D9AE66147902B8FE,
 	AssetBundle_LoadAsset_Internal_mD096392756815901FE982C1AF64DDF0846551433,
@@ -68,6 +73,7 @@ static Il2CppMethodPointer s_methodPointers[42] =
 	AssetBundle_UnloadAsync_mEF0E3987C53B4FA85A8FC54B15FB380D02FDF908,
 	AssetBundle_LoadAssetWithSubAssetsAsync_Internal_m9C189D40BB6E14EFB7432173EC273BE9C5E900D4,
 	AssetBundle_LoadFromFileAsync_Internal_Injected_mE68698232C311F9C7271A38678A1D0D4A5BD3438,
+	AssetBundle_LoadFromMemory_Internal_Injected_m3676080972FBB333ECA02671A2E9A37048F962E0,
 	AssetBundle_LoadAsset_Internal_Injected_m56FFF045DB5ADFCD3A678282E82E8D8099678C66,
 	AssetBundle_LoadAssetAsync_Internal_Injected_m13D33DAEAC19FD9883ACB05A9FEB8A0BE1F0C0DF,
 	AssetBundle_Unload_Injected_m214D08772AB2E1E1136D1E6E96B843254BB756F0,
@@ -92,14 +98,16 @@ static Il2CppMethodPointer s_methodPointers[42] =
 	BindingsMarshaller_ConvertToManaged_m1C22F493733CD3BDAA96A0EAB6BB1B59804C6EE7,
 	BindingsMarshaller_ConvertToNative_mBAF6B68CAD1BC00176278599B648A039D4A79B20,
 };
-static const int32_t s_InvokerIndices[42] = 
+static const int32_t s_InvokerIndices[45] = 
 {
 	15350,
-	26378,
-	26378,
+	26379,
+	26379,
 	19208,
-	24586,
-	21340,
+	24587,
+	21341,
+	21341,
+	24587,
 	-1,
 	4448,
 	4448,
@@ -113,34 +121,35 @@ static const int32_t s_InvokerIndices[42] =
 	9703,
 	4448,
 	19104,
+	21215,
 	19111,
 	19111,
-	21968,
-	21217,
+	21969,
+	21218,
 	19111,
 	15156,
 	11496,
-	24480,
-	24583,
 	24481,
+	24584,
+	24482,
 	15156,
 	15156,
 	15156,
 	11496,
-	24480,
-	24583,
-	24583,
 	24481,
+	24584,
+	24584,
+	24482,
 	15350,
 	11496,
-	24943,
-	24583,
-	24481,
+	24944,
+	24584,
+	24482,
 };
 static const Il2CppTokenRangePair s_rgctxIndices[2] = 
 {
-	{ 0x06000007, { 0, 2 } },
-	{ 0x0600000D, { 2, 1 } },
+	{ 0x06000009, { 0, 2 } },
+	{ 0x0600000F, { 2, 1 } },
 };
 extern const uint32_t g_rgctx_T_t8F5466E687C8861B9EA9A0932E573160D9356A57;
 extern const uint32_t g_rgctx_T_t8F5466E687C8861B9EA9A0932E573160D9356A57;
@@ -155,7 +164,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_UnityEngine_AssetBundleModule_CodeGe
 const Il2CppCodeGenModule g_UnityEngine_AssetBundleModule_CodeGenModule = 
 {
 	"UnityEngine.AssetBundleModule.dll",
-	42,
+	45,
 	s_methodPointers,
 	0,
 	NULL,
