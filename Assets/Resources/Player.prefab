@@ -456,6 +456,7 @@ GameObject:
   - component: {fileID: 6409016322500396432}
   - component: {fileID: 9091149707278602698}
   - component: {fileID: 1132405261951836936}
+  - component: {fileID: 5721707691744940029}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -696,7 +697,6 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   fillHealth: {fileID: 4988434408967649391}
-  smoothSpeed: 0.2
 --- !u!114 &-4800950316512509217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -742,7 +742,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ccd414e5a38fd7a4daa2e33c4d56808c, type: 2}
+  - {fileID: 2100000, guid: fafebb88f7210d74497c02de8f326d5a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -800,8 +800,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 030a252a03fcb09418d376a09fa6140e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerColorSetter
-  localPlayerMat: {fileID: 2100000, guid: 762c20015a0f35342963dae5b510b63c, type: 2}
-  remotePlayerMat: {fileID: 2100000, guid: aa4381b7debade94ebbc4abe74625dec, type: 2}
+  localPlayerMat: {fileID: 2100000, guid: fafebb88f7210d74497c02de8f326d5a, type: 2}
+  remotePlayerMat: {fileID: 2100000, guid: 7110ed338005f0f47bd2362b07ab5322, type: 2}
   renderers:
   - {fileID: 7127071295054895695}
 --- !u!54 &1132405261951836936
@@ -831,6 +831,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &5721707691744940029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7017020677561803152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe418236916cb5c4baa2eae70a58d78d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerDissolveController
+  bodyRenderers:
+  - {fileID: 7127071295054895695}
+  disableObjects:
+  - {fileID: 8164341457325538789}
+  - {fileID: 8741560607112680325}
+  - {fileID: 3848765883260084043}
+  burstDuration: 0.25
 --- !u!1 &8164341457325538789
 GameObject:
   m_ObjectHideFlags: 0

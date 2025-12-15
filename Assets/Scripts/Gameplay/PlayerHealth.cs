@@ -5,103 +5,103 @@ using System.Collections;
 
 public class PlayerHealth : MonoBehaviourPun
 {
-    [Header("Health")]
-    public int maxHealth = 100;          // 100 HP
+    public int maxHealth = 100;
     public int currentHealth;
 
-    [Header("UI")]
     public Image fillHealth;
-    public float smoothSpeed = 0.2f;
-    float lastHitTime;
-    float hitCooldown = 0.15f;
-    Coroutine healthRoutine;
 
-    // 🔥 STORE DEATH POSITION
+    PlayerMovement movement;
+    PlayerAttack attack;
+    PlayerDissolveController dissolve;
+
+    bool isDead;
     Vector3 deathPosition;
 
     void Start()
     {
         currentHealth = maxHealth;
-        UpdateHealthUIInstant();
+        movement = GetComponent<PlayerMovement>();
+        attack = GetComponent<PlayerAttack>();
+        dissolve = GetComponent<PlayerDissolveController>();
+
+        UpdateHealthUI();
     }
 
+    // 🔥 CALLED FROM PROJECTILE (RPC → All)
     [PunRPC]
     public void TakeDamage(int dmg)
     {
         if (!photonView.IsMine) return;
-
-        if (Time.time - lastHitTime < hitCooldown)
-        {
-            Debug.Log("❌ Duplicate hit ignored");
-            return;
-        }
-
-        lastHitTime = Time.time;
+        if (isDead) return;
 
         currentHealth -= dmg;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
 
-        Debug.Log($"✅ Damage applied: {dmg}, Health now: {currentHealth}");
-
-        photonView.RPC(
-            nameof(SyncHealth),
-            RpcTarget.All,
-            currentHealth
-        );
+        photonView.RPC(nameof(RPC_SyncHealth), RpcTarget.All, currentHealth);
 
         if (currentHealth <= 0)
         {
+            isDead = true;
             deathPosition = transform.position;
-            Invoke(nameof(Respawn), 2f);
+
+            StartCoroutine(DeathRoutine());
         }
     }
 
-
-    // 🔥 EVERY CLIENT UPDATES HEALTH BAR
-    [PunRPC]
-    void SyncHealth(int newHealth)
+    IEnumerator DeathRoutine()
     {
-        currentHealth = newHealth;
+        // 🔒 disable gameplay locally
+        movement.enabled = false;
+        attack.enabled = false;
 
-        if (healthRoutine != null)
-            StopCoroutine(healthRoutine);
+        // 🔥 dissolve burst for everyone
+        photonView.RPC(nameof(RPC_DissolveOut), RpcTarget.All);
 
-        healthRoutine = StartCoroutine(SmoothHealthUpdate());
+        yield return new WaitForSeconds(2f);
+
+        Respawn();
     }
 
-    IEnumerator SmoothHealthUpdate()
-    {
-        float startFill = fillHealth.fillAmount;
-        float targetFill = (float)currentHealth / maxHealth;
-        float t = 0f;
-
-        while (t < 1f)
-        {
-            t += Time.deltaTime / smoothSpeed;
-            fillHealth.fillAmount = Mathf.Lerp(startFill, targetFill, t);
-            yield return null;
-        }
-
-        fillHealth.fillAmount = targetFill;
-    }
-
-    void UpdateHealthUIInstant()
-    {
-        fillHealth.fillAmount = 1f;
-    }
-
-    // 🔥 RESPAWN AT SAME PLACE
     void Respawn()
     {
         currentHealth = maxHealth;
-
-        photonView.RPC(
-            nameof(SyncHealth),
-            RpcTarget.All,
-            currentHealth
-        );
-
-        // ✅ RESPAWN EXACTLY WHERE PLAYER DIED
         transform.position = deathPosition;
+
+        photonView.RPC(nameof(RPC_SyncHealth), RpcTarget.All, currentHealth);
+        photonView.RPC(nameof(RPC_DissolveIn), RpcTarget.All);
+
+        movement.enabled = true;
+        attack.enabled = true;
+
+        isDead = false;
+    }
+
+    // ================= RPCs =================
+
+    [PunRPC]
+    void RPC_SyncHealth(int hp)
+    {
+        currentHealth = hp;
+        UpdateHealthUI();
+    }
+
+    [PunRPC]
+    void RPC_DissolveOut()
+    {
+        if (dissolve != null)
+            dissolve.PlayDissolveOutBurst();
+    }
+
+    [PunRPC]
+    void RPC_DissolveIn()
+    {
+        if (dissolve != null)
+            dissolve.PlayDissolveInBurst();
+    }
+
+    void UpdateHealthUI()
+    {
+        if (fillHealth)
+            fillHealth.fillAmount = (float)currentHealth / maxHealth;
     }
 }

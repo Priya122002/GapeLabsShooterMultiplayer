@@ -43,6 +43,11 @@ MonoBehaviour:
   - AttackRPC
   - RPC_Fire
   - SyncHealth
+  - RPC_OnDeath
+  - RPC_OnRespawn
+  - RPC_DissolveIn
+  - RPC_DissolveOut
+  - RPC_SyncHealth
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
