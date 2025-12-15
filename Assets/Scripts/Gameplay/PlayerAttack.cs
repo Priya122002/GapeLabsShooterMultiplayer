@@ -14,8 +14,6 @@ public class PlayerAttack : MonoBehaviourPun
         if (Time.time - lastFireTime < attackCooldown) return;
 
         lastFireTime = Time.time;
-
-        // 🔥 Spawn VISUAL projectile on ALL clients
         photonView.RPC(
             nameof(RPC_Fire),
             RpcTarget.All,

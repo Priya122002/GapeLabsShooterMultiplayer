@@ -25483,7 +25483,7 @@ IL_0023:
 		return;
 	}
 }
-// Method Definition Index: 81890
+// Method Definition Index: 81731
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR uint8_t ProfilerUtility_GetProfilerMarkerDataType_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_mCE6A9B1FD4AEE0DDFFE0CA90A6E3A83A6479B3A7_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -25620,7 +25620,7 @@ IL_007d:
 		return L_9;
 	}
 }
-// Method Definition Index: 81890
+// Method Definition Index: 81731
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR uint8_t ProfilerUtility_GetProfilerMarkerDataType_TisIl2CppFullySharedGenericAny_m52FCF8AA54650C16BCF4EEC8F21C66757AEB72B1_gshared (const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);

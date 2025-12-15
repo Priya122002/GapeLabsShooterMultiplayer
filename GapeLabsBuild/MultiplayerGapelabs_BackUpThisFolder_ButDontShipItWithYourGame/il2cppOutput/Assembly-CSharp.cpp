@@ -7409,12 +7409,12 @@ IL_002f:
 		float L_7;
 		L_7 = Time_get_time_m3A271BB1B20041144AC5B7863B71AB1F0150374B(NULL);
 		__this->___lastFireTime = L_7;
+		//<source_info:C:/Users/vel/Documents/PriyaProjects/GapeLabsShooterMultiplayer/Assets/Scripts/Gameplay/PlayerAttack.cs:18>
 		//<source_info:C:/Users/vel/Documents/PriyaProjects/GapeLabsShooterMultiplayer/Assets/Scripts/Gameplay/PlayerAttack.cs:19>
 		//<source_info:C:/Users/vel/Documents/PriyaProjects/GapeLabsShooterMultiplayer/Assets/Scripts/Gameplay/PlayerAttack.cs:20>
 		//<source_info:C:/Users/vel/Documents/PriyaProjects/GapeLabsShooterMultiplayer/Assets/Scripts/Gameplay/PlayerAttack.cs:21>
 		//<source_info:C:/Users/vel/Documents/PriyaProjects/GapeLabsShooterMultiplayer/Assets/Scripts/Gameplay/PlayerAttack.cs:22>
 		//<source_info:C:/Users/vel/Documents/PriyaProjects/GapeLabsShooterMultiplayer/Assets/Scripts/Gameplay/PlayerAttack.cs:23>
-		//<source_info:C:/Users/vel/Documents/PriyaProjects/GapeLabsShooterMultiplayer/Assets/Scripts/Gameplay/PlayerAttack.cs:24>
 		PhotonView_t43F3D22FF3D00F7824E82D741D70F9CB55642E6B* L_8;
 		L_8 = MonoBehaviourPun_get_photonView_m0DBC40909E2E885D7FA3D40157A189FADEE98A67(__this, NULL);
 		ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* L_9 = (ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*)(ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918*)SZArrayNew(ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918_il2cpp_TypeInfo_var, (uint32_t)2);
@@ -7444,7 +7444,7 @@ IL_002f:
 
 IL_0078:
 	{
-		//<source_info:C:/Users/vel/Documents/PriyaProjects/GapeLabsShooterMultiplayer/Assets/Scripts/Gameplay/PlayerAttack.cs:25>
+		//<source_info:C:/Users/vel/Documents/PriyaProjects/GapeLabsShooterMultiplayer/Assets/Scripts/Gameplay/PlayerAttack.cs:24>
 		return;
 	}
 }
@@ -7462,7 +7462,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerAttack_RPC_Fire_mEC23C77BBBFF396B8
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* V_0 = NULL;
 	bool V_1 = false;
 	{
-		//<source_info:C:/Users/vel/Documents/PriyaProjects/GapeLabsShooterMultiplayer/Assets/Scripts/Gameplay/PlayerAttack.cs:30>
+		//<source_info:C:/Users/vel/Documents/PriyaProjects/GapeLabsShooterMultiplayer/Assets/Scripts/Gameplay/PlayerAttack.cs:29>
 		ObjectPooler_t1A35D20DD7F7B861537E5EC6FE6071013B2F62D0* L_0 = ((ObjectPooler_t1A35D20DD7F7B861537E5EC6FE6071013B2F62D0_StaticFields*)il2cpp_codegen_static_fields_for(ObjectPooler_t1A35D20DD7F7B861537E5EC6FE6071013B2F62D0_il2cpp_TypeInfo_var))->___Instance;
 		NullCheck(L_0);
 		bool L_1;
@@ -7475,17 +7475,17 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerAttack_RPC_Fire_mEC23C77BBBFF396B8
 		}
 	}
 	{
-		//<source_info:C:/Users/vel/Documents/PriyaProjects/GapeLabsShooterMultiplayer/Assets/Scripts/Gameplay/PlayerAttack.cs:30>
+		//<source_info:C:/Users/vel/Documents/PriyaProjects/GapeLabsShooterMultiplayer/Assets/Scripts/Gameplay/PlayerAttack.cs:29>
 		goto IL_0032;
 	}
 
 IL_0014:
 	{
+		//<source_info:C:/Users/vel/Documents/PriyaProjects/GapeLabsShooterMultiplayer/Assets/Scripts/Gameplay/PlayerAttack.cs:31>
 		//<source_info:C:/Users/vel/Documents/PriyaProjects/GapeLabsShooterMultiplayer/Assets/Scripts/Gameplay/PlayerAttack.cs:32>
 		//<source_info:C:/Users/vel/Documents/PriyaProjects/GapeLabsShooterMultiplayer/Assets/Scripts/Gameplay/PlayerAttack.cs:33>
 		//<source_info:C:/Users/vel/Documents/PriyaProjects/GapeLabsShooterMultiplayer/Assets/Scripts/Gameplay/PlayerAttack.cs:34>
 		//<source_info:C:/Users/vel/Documents/PriyaProjects/GapeLabsShooterMultiplayer/Assets/Scripts/Gameplay/PlayerAttack.cs:35>
-		//<source_info:C:/Users/vel/Documents/PriyaProjects/GapeLabsShooterMultiplayer/Assets/Scripts/Gameplay/PlayerAttack.cs:36>
 		ObjectPooler_t1A35D20DD7F7B861537E5EC6FE6071013B2F62D0* L_3 = ((ObjectPooler_t1A35D20DD7F7B861537E5EC6FE6071013B2F62D0_StaticFields*)il2cpp_codegen_static_fields_for(ObjectPooler_t1A35D20DD7F7B861537E5EC6FE6071013B2F62D0_il2cpp_TypeInfo_var))->___Instance;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_4 = ___0_pos;
 		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_5 = ___1_rot;
@@ -7493,7 +7493,7 @@ IL_0014:
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_6;
 		L_6 = ObjectPooler_Spawn_m030BD67128CB5BFE7155E99CD5D5CB651F3596D5(L_3, _stringLiteralC00C36D0E5E4DEE3EE46C5BBA529B7DA5B5C005F, L_4, L_5, NULL);
 		V_0 = L_6;
-		//<source_info:C:/Users/vel/Documents/PriyaProjects/GapeLabsShooterMultiplayer/Assets/Scripts/Gameplay/PlayerAttack.cs:38>
+		//<source_info:C:/Users/vel/Documents/PriyaProjects/GapeLabsShooterMultiplayer/Assets/Scripts/Gameplay/PlayerAttack.cs:37>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_7 = V_0;
 		NullCheck(L_7);
 		Projectile_tA72765CF412643B7253F62ADB6EDDCC9C3803BA6* L_8;
@@ -7504,7 +7504,7 @@ IL_0014:
 
 IL_0032:
 	{
-		//<source_info:C:/Users/vel/Documents/PriyaProjects/GapeLabsShooterMultiplayer/Assets/Scripts/Gameplay/PlayerAttack.cs:39>
+		//<source_info:C:/Users/vel/Documents/PriyaProjects/GapeLabsShooterMultiplayer/Assets/Scripts/Gameplay/PlayerAttack.cs:38>
 		return;
 	}
 }
@@ -7513,7 +7513,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerAttack__ctor_m3F71E53EB6FA66759E07
 {
 	{
 		//<source_info:C:/Users/vel/Documents/PriyaProjects/GapeLabsShooterMultiplayer/Assets/Scripts/Gameplay/PlayerAttack.cs:7>
-		__this->___attackCooldown = (0.5f);
+		__this->___attackCooldown = (0.00100000005f);
 		MonoBehaviourPun__ctor_m52771D9D46565807FDF72A7B6622574D38C29A55(__this, NULL);
 		return;
 	}

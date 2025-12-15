@@ -22,7 +22,6 @@ public class PlayerUsername : MonoBehaviour
     public void playerUsernameInputValueChanged()
     {
         string username = usernameInput.text;
-
         if (!string.IsNullOrEmpty(username) && username.Length <= 20)
         {
             PhotonNetwork.NickName = username;
