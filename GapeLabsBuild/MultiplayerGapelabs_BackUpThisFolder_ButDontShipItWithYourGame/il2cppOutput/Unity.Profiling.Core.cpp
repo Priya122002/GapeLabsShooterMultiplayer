@@ -373,7 +373,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t String_get_Length_m42625D
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 81679
+// Method Definition Index: 81838
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void EmbeddedAttribute__ctor_mC8F05DF619664423E825A1166C0F3A041D1241B1 (EmbeddedAttribute_t2162DE2BA28C5C71F9EE2BAE3466A44381F0A0BB* __this, const RuntimeMethod* method) 
 {
 	{
@@ -389,7 +389,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void EmbeddedAttribute__ctor_mC8F05DF61966442
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 81680
+// Method Definition Index: 81839
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void IsUnmanagedAttribute__ctor_mC550690DDF4A9CAB011A3631E63E8C7E0A716753 (IsUnmanagedAttribute_t613A5BF19DFA2D6776C1DF030C7AD37F7AF8E4EE* __this, const RuntimeMethod* method) 
 {
 	{
@@ -405,7 +405,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void IsUnmanagedAttribute__ctor_mC550690DDF4A
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 81681
+// Method Definition Index: 81840
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MonoScriptData_t7CF59309CF0346AA5BD14CF279AEE01C93C2389C UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_mDB1B799915F97315B896EC64462D37F89080AD5F (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -448,7 +448,7 @@ IL_005e:
 		return L_7;
 	}
 }
-// Method Definition Index: 81682
+// Method Definition Index: 81841
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_m131ECEC1C57B0D37EA2E0D2A09C7985C7DCB1213 (UnitySourceGeneratedAssemblyMonoScriptTypes_v1_t08AF3BBE508CBDA27FFE33186CBD188F234E3F54* __this, const RuntimeMethod* method) 
 {
 	{
@@ -534,7 +534,7 @@ IL2CPP_EXTERN_C void MonoScriptData_t7CF59309CF0346AA5BD14CF279AEE01C93C2389C_ma
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 81714
+// Method Definition Index: 81873
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ProfilerMarkerExtension_Begin_m3023D2EEDDAC3DF4525CDD3E68CBECEDB0B338A7 (ProfilerMarker_tA256E18DA86EDBC5528CE066FC91C96EE86501AD ___0_marker, int32_t ___1_metadata, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -570,7 +570,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ProfilerMarkerExtension_Begin_m3023D2EED
 		return;
 	}
 }
-// Method Definition Index: 81715
+// Method Definition Index: 81874
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ProfilerMarkerExtension_Begin_mDADCC5976AE21FA2B1D4A7CA096514EE6489A6DB (ProfilerMarker_tA256E18DA86EDBC5528CE066FC91C96EE86501AD ___0_marker, uint32_t ___1_metadata, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -606,7 +606,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ProfilerMarkerExtension_Begin_mDADCC5976
 		return;
 	}
 }
-// Method Definition Index: 81716
+// Method Definition Index: 81875
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ProfilerMarkerExtension_Begin_m088F2A3A6CF7B9F4882A8C5CC26DC5FAE350639D (ProfilerMarker_tA256E18DA86EDBC5528CE066FC91C96EE86501AD ___0_marker, int64_t ___1_metadata, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -642,7 +642,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ProfilerMarkerExtension_Begin_m088F2A3A6
 		return;
 	}
 }
-// Method Definition Index: 81717
+// Method Definition Index: 81876
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ProfilerMarkerExtension_Begin_mB9E46B6A68217096FA1B093657969D5D53C0ED4B (ProfilerMarker_tA256E18DA86EDBC5528CE066FC91C96EE86501AD ___0_marker, uint64_t ___1_metadata, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -678,7 +678,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ProfilerMarkerExtension_Begin_mB9E46B6A6
 		return;
 	}
 }
-// Method Definition Index: 81718
+// Method Definition Index: 81877
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ProfilerMarkerExtension_Begin_m899B1C6F7DD4BE71A5CA0D3C8643D6EE64361ED6 (ProfilerMarker_tA256E18DA86EDBC5528CE066FC91C96EE86501AD ___0_marker, float ___1_metadata, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -714,7 +714,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ProfilerMarkerExtension_Begin_m899B1C6F7
 		return;
 	}
 }
-// Method Definition Index: 81719
+// Method Definition Index: 81878
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ProfilerMarkerExtension_Begin_mDEE72C4D6E4497C10542BC16154BA05BD136FC8A (ProfilerMarker_tA256E18DA86EDBC5528CE066FC91C96EE86501AD ___0_marker, double ___1_metadata, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -750,7 +750,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ProfilerMarkerExtension_Begin_mDEE72C4D6
 		return;
 	}
 }
-// Method Definition Index: 81720
+// Method Definition Index: 81879
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ProfilerMarkerExtension_Begin_mEA0E2F2019E9A1E43B86A3E71A2EA3BE40A16240 (ProfilerMarker_tA256E18DA86EDBC5528CE066FC91C96EE86501AD ___0_marker, String_t* ___1_metadata, const RuntimeMethod* method) 
 {
 	ProfilerMarkerData_tC01B15D61B904B700E4DE1FFB3452F2C5C2789A2 V_0;

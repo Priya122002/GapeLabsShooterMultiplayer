@@ -5,44 +5,68 @@ using System.Collections;
 
 public class PlayerHealth : MonoBehaviourPun
 {
-    public int maxHealth = 100;
-    private int currentHealth;
+    [Header("Health")]
+    public int maxHealth = 100;          // 100 HP
+    public int currentHealth;
 
     [Header("UI")]
     public Image fillHealth;
     public float smoothSpeed = 0.2f;
+    float lastHitTime;
+    float hitCooldown = 0.15f;
+    Coroutine healthRoutine;
 
-    private Coroutine healthRoutine;
+    // 🔥 STORE DEATH POSITION
+    Vector3 deathPosition;
 
     void Start()
     {
         currentHealth = maxHealth;
-
-        if (photonView.IsMine)
-        {
-            fillHealth.fillAmount = 1f;
-        }
+        UpdateHealthUIInstant();
     }
 
     [PunRPC]
     public void TakeDamage(int dmg)
     {
-        // ✅ ONLY HIT PLAYER APPLIES DAMAGE
         if (!photonView.IsMine) return;
+
+        if (Time.time - lastHitTime < hitCooldown)
+        {
+            Debug.Log("❌ Duplicate hit ignored");
+            return;
+        }
+
+        lastHitTime = Time.time;
 
         currentHealth -= dmg;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
 
-        // 🔥 Smooth health bar update
+        Debug.Log($"✅ Damage applied: {dmg}, Health now: {currentHealth}");
+
+        photonView.RPC(
+            nameof(SyncHealth),
+            RpcTarget.All,
+            currentHealth
+        );
+
+        if (currentHealth <= 0)
+        {
+            deathPosition = transform.position;
+            Invoke(nameof(Respawn), 2f);
+        }
+    }
+
+
+    // 🔥 EVERY CLIENT UPDATES HEALTH BAR
+    [PunRPC]
+    void SyncHealth(int newHealth)
+    {
+        currentHealth = newHealth;
+
         if (healthRoutine != null)
             StopCoroutine(healthRoutine);
 
         healthRoutine = StartCoroutine(SmoothHealthUpdate());
-
-        if (currentHealth <= 0)
-        {
-            Invoke(nameof(Respawn), 2f);
-        }
     }
 
     IEnumerator SmoothHealthUpdate()
@@ -61,14 +85,23 @@ public class PlayerHealth : MonoBehaviourPun
         fillHealth.fillAmount = targetFill;
     }
 
+    void UpdateHealthUIInstant()
+    {
+        fillHealth.fillAmount = 1f;
+    }
+
+    // 🔥 RESPAWN AT SAME PLACE
     void Respawn()
     {
         currentHealth = maxHealth;
-        transform.position = Vector3.zero;
 
-        if (photonView.IsMine)
-        {
-            fillHealth.fillAmount = 1f;
-        }
+        photonView.RPC(
+            nameof(SyncHealth),
+            RpcTarget.All,
+            currentHealth
+        );
+
+        // ✅ RESPAWN EXACTLY WHERE PLAYER DIED
+        transform.position = deathPosition;
     }
 }

@@ -33512,7 +33512,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArraySortHelper_2__cctor_m0BD298AED5B926
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 74127
+// Method Definition Index: 74125
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AssetReferenceT_1__ctor_m50D6611193A28914E709481F8AA1BFF6EB3B05FB_gshared (AssetReferenceT_1_t7D9DC8B7474563743CCC3E1D1CD06D03EDE333C3* __this, String_t* ___0_guid, const RuntimeMethod* method) 
 {
 	{
@@ -33523,7 +33523,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AssetReferenceT_1__ctor_m50D6611193A2891
 		return;
 	}
 }
-// Method Definition Index: 74128
+// Method Definition Index: 74126
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AsyncOperationHandle_1_tDD1D892D87C7A0C3189DD56DDB997AB1A2089A74 AssetReferenceT_1_LoadAssetAsync_mF7EF012A24EFD3102EC8B40731C30BA28206098F_gshared (AssetReferenceT_1_t7D9DC8B7474563743CCC3E1D1CD06D03EDE333C3* __this, const RuntimeMethod* method) 
 {
 	AsyncOperationHandle_1_tDD1D892D87C7A0C3189DD56DDB997AB1A2089A74 V_0;
@@ -33544,7 +33544,7 @@ IL_000a:
 		return L_1;
 	}
 }
-// Method Definition Index: 74129
+// Method Definition Index: 74127
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool AssetReferenceT_1_ValidateAsset_mDFD158C65F5283D632F9B098B41D6D6E994E24AC_gshared (AssetReferenceT_1_t7D9DC8B7474563743CCC3E1D1CD06D03EDE333C3* __this, Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C* ___0_obj, const RuntimeMethod* method) 
 {
 	Type_t* V_0 = NULL;
@@ -33576,7 +33576,7 @@ IL_001b:
 		return L_6;
 	}
 }
-// Method Definition Index: 74130
+// Method Definition Index: 74128
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool AssetReferenceT_1_ValidateAsset_m05A4145DF32B74CB84B0D48AAE82D06538BA5D5C_gshared (AssetReferenceT_1_t7D9DC8B7474563743CCC3E1D1CD06D03EDE333C3* __this, String_t* ___0_mainAssetPath, const RuntimeMethod* method) 
 {
 	bool V_0 = false;
@@ -33601,7 +33601,7 @@ IL_0005:
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 50550
+// Method Definition Index: 50548
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AsyncInstantiateOperation_1__ctor_m736E51D87AC577EDB42B033FE0FE1F1DE1DE4D7C_gshared (AsyncInstantiateOperation_1_t354498C3467FE5FC5E07F694160D6ED03F252346* __this, intptr_t ___0_ptr, CancellationToken_t51142D9C6D7C02D314DA34A6A7988C528992FFED ___1_cancellationToken, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -33618,7 +33618,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AsyncInstantiateOperation_1__ctor_m736E5
 		return;
 	}
 }
-// Method Definition Index: 50551
+// Method Definition Index: 50549
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ObjectU5BU5D_tD4BF1BEC72A31DF6611C0B8FA3112AF128FC3F8A* AsyncInstantiateOperation_1_CreateResultArray_m61DF6A2A2902CA6E5A116AF6FBCF937A0C8181BF_gshared (AsyncInstantiateOperation_1_t354498C3467FE5FC5E07F694160D6ED03F252346* __this, int32_t ___0_size, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;

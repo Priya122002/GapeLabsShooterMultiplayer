@@ -4,16 +4,21 @@ using Photon.Pun;
 public class PlayerMovement : MonoBehaviourPun
 {
     public float moveSpeed = 5f;
-    public float rotationSpeed = 10f;
+
+    [Header("Rotation")]
+    public float rotationSpeed = 6f;          // lower = smoother
+    public float inputDeadZone = 0.15f;        // joystick jitter filter
 
     VirtualJoystick joystick;
     Transform cam;
+
+    Vector3 smoothMoveDir;
 
     void Start()
     {
         if (!photonView.IsMine)
         {
-            enabled = false; // 🔥 optimization
+            enabled = false;
             return;
         }
 
@@ -26,7 +31,10 @@ public class PlayerMovement : MonoBehaviourPun
         if (joystick == null) return;
 
         Vector2 input = joystick.InputVector;
-        if (input.sqrMagnitude < 0.01f) return;
+
+        // 🔥 Dead zone (important for smoothness)
+        if (input.magnitude < inputDeadZone)
+            return;
 
         Vector3 camForward = cam.forward;
         Vector3 camRight = cam.right;
@@ -37,20 +45,34 @@ public class PlayerMovement : MonoBehaviourPun
         camForward.Normalize();
         camRight.Normalize();
 
-        Vector3 moveDir =
+        Vector3 rawMoveDir =
             camForward * input.y +
             camRight * input.x;
 
+        // 🔥 Smooth direction change
+        smoothMoveDir = Vector3.Lerp(
+            smoothMoveDir,
+            rawMoveDir.normalized,
+            Time.deltaTime * 8f
+        );
+
+        // Move
         transform.Translate(
-            moveDir * moveSpeed * Time.deltaTime,
+            smoothMoveDir * moveSpeed * Time.deltaTime,
             Space.World
         );
 
-        Quaternion targetRotation = Quaternion.LookRotation(moveDir);
-        transform.rotation = Quaternion.Slerp(
-            transform.rotation,
-            targetRotation,
-            rotationSpeed * Time.deltaTime
-        );
+        // 🔥 Smooth rotation
+        if (smoothMoveDir.sqrMagnitude > 0.001f)
+        {
+            Quaternion targetRotation =
+                Quaternion.LookRotation(smoothMoveDir);
+
+            transform.rotation = Quaternion.Slerp(
+                transform.rotation,
+                targetRotation,
+                rotationSpeed * Time.deltaTime
+            );
+        }
     }
 }

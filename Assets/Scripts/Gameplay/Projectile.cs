@@ -3,27 +3,35 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    public Transform visual;
     public float speed = 12f;
     public float lifeTime = 2f;
-    public int damage = 10;
-
-    private float timer;
-    private Transform visualChild;
+    public int damage = 5;
+    float timer;
+    bool hasHit;
+    Collider col;
 
     void Awake()
     {
-        visualChild = transform.GetChild(0); // visual mesh
+        col = GetComponent<Collider>();
     }
 
     void OnEnable()
     {
         timer = lifeTime;
-        visualChild.localRotation = Quaternion.identity;
+        hasHit = false;
+
+        if (col != null)
+            col.enabled = true;
+
+        if (visual != null)
+            visual.localRotation = Quaternion.identity;
     }
 
     public void RotateVisual90()
     {
-        visualChild.localRotation = Quaternion.Euler(90f, 0f, 0f);
+        if (visual != null)
+            visual.localRotation = Quaternion.Euler(90f, 0f, 0f);
     }
 
     void Update()
@@ -32,28 +40,40 @@ public class Projectile : MonoBehaviour
 
         timer -= Time.deltaTime;
         if (timer <= 0f)
-        {
             ReturnToPool();
-        }
     }
+
     void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("Player")) return;
 
-        PlayerHealth health = other.GetComponent<PlayerHealth>();
-        if (health != null)
+        if (hasHit) return;
+
+        hasHit = true;
+
+        if (col != null)
+            col.enabled = false;
+
+        if (PhotonNetwork.IsMasterClient)
         {
-            // ✅ Send to all
-            health.photonView.RPC(
-                nameof(PlayerHealth.TakeDamage),
-                RpcTarget.All,
-                damage
-            );
+            PlayerHealth health = other.GetComponent<PlayerHealth>();
+            if (health != null)
+            {
+                Debug.Log(
+                    $"[SEND DAMAGE] Damage:{damage} → PlayerView:{health.photonView.ViewID}"
+                );
+
+                health.photonView.RPC(
+     nameof(PlayerHealth.TakeDamage),
+     RpcTarget.All,
+     damage
+ );
+
+            }
         }
 
         ReturnToPool();
     }
-
 
 
     void ReturnToPool()

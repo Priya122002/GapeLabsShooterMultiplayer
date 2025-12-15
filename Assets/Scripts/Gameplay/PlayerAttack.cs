@@ -15,14 +15,13 @@ public class PlayerAttack : MonoBehaviourPun
 
         lastFireTime = Time.time;
 
+        // 🔥 Spawn VISUAL projectile on ALL clients
         photonView.RPC(
             nameof(RPC_Fire),
             RpcTarget.All,
             gunPoint.position,
             gunPoint.rotation
         );
-
-        Debug.DrawRay(gunPoint.position, gunPoint.forward * 3f, Color.green, 2f);
     }
 
     [PunRPC]
@@ -38,4 +37,5 @@ public class PlayerAttack : MonoBehaviourPun
 
         bullet.GetComponent<Projectile>().RotateVisual90();
     }
+
 }
