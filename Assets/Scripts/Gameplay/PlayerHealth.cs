@@ -53,7 +53,7 @@ public class PlayerHealth : MonoBehaviourPun
         // 🔒 disable gameplay locally
         movement.enabled = false;
         attack.enabled = false;
-
+        SoundManager.Instance.Play("die");
         // 🔥 dissolve burst for everyone
         photonView.RPC(nameof(RPC_DissolveOut), RpcTarget.All);
 

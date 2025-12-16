@@ -131,5 +131,8 @@ public class Launcher : MonoBehaviourPunCallbacks
             .SetUp(newPlayer);
     }
 
-
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }

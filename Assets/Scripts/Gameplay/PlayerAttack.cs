@@ -14,6 +14,7 @@ public class PlayerAttack : MonoBehaviourPun
         if (Time.time - lastFireTime < attackCooldown) return;
 
         lastFireTime = Time.time;
+        SoundManager.Instance.Play("shoot");
         photonView.RPC(
             nameof(RPC_Fire),
             RpcTarget.All,
