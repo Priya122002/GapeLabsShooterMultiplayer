@@ -13,7 +13,7 @@ public class Launcher : MonoBehaviourPunCallbacks
     public static Launcher Instance;
     [SerializeField] TMP_InputField roomNameInputField;
     [SerializeField] TextMeshProUGUI roomNameText;
-    [SerializeField] TextMeshProUGUI errorText;
+ 
     [SerializeField] Transform roomListContent;
     [SerializeField] GameObject roomListItemPrefab;
     [SerializeField] Transform playerListContent;
@@ -83,9 +83,20 @@ public class Launcher : MonoBehaviourPunCallbacks
 
     public override void OnCreateRoomFailed(short returnCode, string errorMessage)
     {
-        errorText.text = "Room Generation Unsuccessful" + errorMessage;
-        MenuManager.Instance.OpenMenu("ErrorMenu");
+        ErrorPopup.Instance.Show(
+            "Failed to create room",
+            () => PhotonNetwork.ConnectUsingSettings()
+        );
     }
+
+    public override void OnJoinRoomFailed(short returnCode, string message)
+    {
+        ErrorPopup.Instance.Show(
+            "Failed to join room",
+            () => PhotonNetwork.ConnectUsingSettings()
+        );
+    }
+ 
 
     public void JoinRoom(RoomInfo info)
     {
@@ -122,6 +133,18 @@ public class Launcher : MonoBehaviourPunCallbacks
                 .GetComponent<RoomListItem>()
                 .SetUp(roomList[i]);
         }
+    }
+
+    public override void OnDisconnected(DisconnectCause cause)
+    {
+        ErrorPopup.Instance.Show(
+            "Network disconnected. Please check your internet.",
+            () =>
+            {
+                PhotonNetwork.ConnectUsingSettings();
+                MenuManager.Instance.OpenMenu("TitleMenu");
+            }
+        );
     }
 
     public override void OnPlayerEnteredRoom(Player newPlayer)

@@ -44,7 +44,7 @@ public class AddressableManager : MonoBehaviour
         }
         else
         {
-            ErrorPopup.Instance.ShowRetry(LoadArena);
+            ErrorPopup.Instance.Show("Failed to load arena",LoadArena);
         }
     }
 }

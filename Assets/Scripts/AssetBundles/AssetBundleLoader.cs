@@ -6,7 +6,6 @@ public class AssetBundleLoader : MonoBehaviour
 {
     public string bundleUrl;
     public string prefabName = "BundleCube";
-
     public Transform[] spawnPoints;
 
     IEnumerator Start()
@@ -16,7 +15,10 @@ public class AssetBundleLoader : MonoBehaviour
 
         if (request.result != UnityWebRequest.Result.Success)
         {
-            Debug.LogError(request.error);
+            ErrorPopup.Instance.Show(
+                "AssetBundle download failed",
+                () => StartCoroutine(Start())
+            );
             yield break;
         }
 
@@ -25,7 +27,10 @@ public class AssetBundleLoader : MonoBehaviour
 
         if (bundle == null)
         {
-            Debug.LogError("Bundle load failed");
+            ErrorPopup.Instance.Show(
+                "Failed to load AssetBundle",
+                () => StartCoroutine(Start())
+            );
             yield break;
         }
 
@@ -33,18 +38,18 @@ public class AssetBundleLoader : MonoBehaviour
 
         if (prefab == null)
         {
-            Debug.LogError("Prefab not found in bundle");
+            ErrorPopup.Instance.Show(
+                "Prefab not found in AssetBundle",
+                () => StartCoroutine(Start())
+            );
             yield break;
         }
 
         foreach (Transform point in spawnPoints)
         {
             GameObject obj = Instantiate(prefab, point);
-
             obj.transform.localPosition = Vector3.zero;
             obj.transform.localRotation = Quaternion.identity;
-
         }
-
     }
 }
